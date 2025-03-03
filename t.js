@@ -1,11 +1,12 @@
-declaredFunc();
-
-function declaredFunc() {
-  console.log("declared");
+function longWaitingFunction() {
+  for (let i = 0; i < 10000000000000; i++) {
+    // do nothing
+  }
 }
 
-expressedFunc();
-const expressedFunc = () => {
-  console.log("expressed");
-};
-expressedFunc();
+function dodd() {
+  longWaitingFunction();
+  console.log("hello");
+}
+
+dodd();
